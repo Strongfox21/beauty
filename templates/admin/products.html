@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Управление товарами - BeautyShop</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="admin-body">
+    <aside class="admin-sidebar">
+        <div class="admin-logo">
+            <h2>✨ BeautyShop</h2>
+            <p>Админ-панель</p>
+        </div>
+        <nav class="admin-nav">
+            <a href="/admin">📊 Dashboard</a>
+            <a href="/admin/products" class="active">📦 Товары</a>
+            <a href="/admin/orders">🛒 Заказы</a>
+            <a href="/admin/users">👥 Пользователи</a>
+            <a href="/">🏠 На сайт</a>
+            <a href="/logout">🚪 Выход</a>
+        </nav>
+    </aside>
+
+    <main class="admin-main">
+        <div class="admin-header">
+            <h1>Управление товарами</h1>
+            <button onclick="showAddProductModal()" class="btn btn-primary">+ Добавить товар</button>
+        </div>
+        
+        <table class="admin-table" id="productsTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Фото</th>
+                    <th>Название</th>
+                    <th>Цена (сом)</th>
+                    <th>Категория</th>
+                    <th>Склад</th>
+                    <th>Действия</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </main>
+
+    <div id="productModal" class="modal" style="display:none">
+        <div class="modal-content">
+            <h2 id="modalTitle">Добавить товар</h2>
+            <input type="hidden" id="editProductId">
+            
+            <div class="form-group">
+                <label>Название *</label>
+                <input type="text" id="productName" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Описание</label>
+                <textarea id="productDescription" rows="3"></textarea>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Цена (сом) *</label>
+                    <input type="number" id="productPrice" required min="0">
+                </div>
+                <div class="form-group">
+                    <label>Количество *</label>
+                    <input type="number" id="productStock" required min="0">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>Категория *</label>
+                <select id="productCategory" required>
+                    <option value="">Выберите категорию</option>
+                    <option value="Макияж">Макияж</option>
+                    <option value="Уход за лицом">Уход за лицом</option>
+                    <option value="Уход за волосами">Уход за волосами</option>
+                    <option value="Уход за телом">Уход за телом</option>
+                    <option value="Парфюмерия">Парфюмерия</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label>Бренд</label>
+                <input type="text" id="productBrand">
+            </div>
+            
+            <div class="form-group">
+                <label>URL изображения</label>
+                <input type="url" id="productImage" placeholder="https://...">
+            </div>
+            
+            <div class="form-group">
+                <label>Рейтинг (0-5)</label>
+                <input type="number" id="productRating" min="0" max="5" step="0.1" value="0">
+            </div>
+            
+            <div class="modal-actions">
+                <button onclick="saveProduct()" class="btn btn-primary">Сохранить</button>
+                <button onclick="closeModal()" class="btn btn-secondary">Отмена</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/script.js"></script>
+    <script>loadAdminProducts();</script>
+</body>
+</html>

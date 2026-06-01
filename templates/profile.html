@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой профиль - BeautyShop</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>✨ BeautyShop</h1>
+                </div>
+                <nav class="nav">
+                    <a href="/">Главная</a>
+                    <a href="/catalog">Каталог</a>
+                    <a href="/cart">🛒 Корзина (<span id="cartCount">0</span>)</a>
+                    <div id="userMenu"></div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="profile-page">
+        <div class="container">
+            <h1>Мой профиль</h1>
+            
+            <div class="profile-content">
+                <section class="profile-section">
+                    <h2>Мои заказы</h2>
+                    <div id="myOrders" class="orders-list"></div>
+                    <div id="noOrders" style="display:none" class="empty-state">
+                        <p>У вас пока нет заказов</p>
+                        <a href="/catalog" class="btn btn-primary">Перейти в каталог</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 BeautyShop</p>
+        </div>
+    </footer>
+
+    <script src="/static/js/script.js"></script>
+    <script>
+        checkAuth();
+        loadMyOrders();
+        updateCartCount();
+    </script>
+</body>
+</html>

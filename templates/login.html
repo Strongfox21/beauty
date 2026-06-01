@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход - BeautyShop</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="auth-page">
+    <div class="auth-container">
+        <div class="auth-box">
+            <div class="auth-header">
+                <h1>✨ BeautyShop</h1>
+                <h2>Вход в систему</h2>
+            </div>
+            
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="email" placeholder="example@mail.kg" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Пароль</label>
+                <input type="password" id="password" placeholder="Введите пароль" required>
+            </div>
+            
+            <div id="errorMessage" class="error-message" style="display:none"></div>
+            
+            <button onclick="login()" class="btn btn-primary btn-block btn-large">Войти</button>
+            
+            <p class="auth-link">Нет аккаунта? <a href="/register">Зарегистрироваться</a></p>
+            <p class="auth-link"><a href="/">← Вернуться на главную</a></p>
+            
+            <div class="demo-info">
+                <p><strong>Демо-доступы для тестирования:</strong></p>
+                <p>👑 Админ: admin@beautyshop.kg / admin123</p>
+                <p>👤 Пользователь: user@test.kg / user123</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

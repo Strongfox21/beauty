@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeautyShop - Интернет-магазин косметики в Бишкеке</title>
+    <meta name="description" content="Купить косметику в Бишкеке с доставкой. Широкий выбор косметики по доступным ценам в сомах.">
+    <meta name="keywords" content="косметика, купить косметику, Бишкек, интернет-магазин">
+    <meta property="og:title" content="BeautyShop - Косметика в Бишкеке">
+    <meta property="og:description" content="Интернет-магазин косметики с доставкой">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>✨ BeautyShop</h1>
+                    <p>Красота в каждой детали</p>
+                </div>
+                <nav class="nav">
+                    <a href="/">Главная</a>
+                    <a href="/catalog">Каталог</a>
+                    <a href="/cart">🛒 Корзина (<span id="cartCount">0</span>)</a>
+                    <div id="userMenu"></div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2 class="hero-title">Откройте мир красоты</h2>
+            <p class="hero-subtitle">Только оригинальная косметика от ведущих мировых брендов</p>
+            <div class="hero-features">
+                <div class="feature">✓ Оригинальная продукция</div>
+                <div class="feature">✓ Быстрая доставка по Кыргызстану</div>
+                <div class="feature">✓ Гарантия качества</div>
+            </div>
+            <a href="/catalog" class="btn btn-primary btn-large">Перейти в каталог</a>
+        </div>
+    </section>
+
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">Популярные категории</h2>
+            <div class="category-grid">
+                <a href="/catalog?category=Макияж" class="category-card">
+                    <div class="category-icon">💄</div>
+                    <h3>Макияж</h3>
+                    <p>Тушь, помады, тональные средства</p>
+                </a>
+                <a href="/catalog?category=Уход за лицом" class="category-card">
+                    <div class="category-icon">🧴</div>
+                    <h3>Уход за лицом</h3>
+                    <p>Кремы, сыворотки, очищение</p>
+                </a>
+                <a href="/catalog?category=Уход за волосами" class="category-card">
+                    <div class="category-icon">💇</div>
+                    <h3>Уход за волосами</h3>
+                    <p>Шампуни, маски, стайлинг</p>
+                </a>
+                <a href="/catalog?category=Уход за телом" class="category-card">
+                    <div class="category-icon">🌸</div>
+                    <h3>Уход за телом</h3>
+                    <p>Лосьоны, скрабы, масла</p>
+                </a>
+                <a href="/catalog?category=Парфюмерия" class="category-card">
+                    <div class="category-icon">🌺</div>
+                    <h3>Парфюмерия</h3>
+                    <p>Духи, туалетная вода</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="bestsellers">
+        <div class="container">
+            <h2 class="section-title">Хиты продаж</h2>
+            <div id="bestsellers" class="product-grid"></div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <h2 class="section-title">Почему выбирают нас?</h2>
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="about-icon">🎁</div>
+                    <h3>Подарки к заказу</h3>
+                    <p>При покупке от 2000 сом</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">🚚</div>
+                    <h3>Доставка по КР</h3>
+                    <p>Быстрая доставка в любой регион</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">💯</div>
+                    <h3>Гарантия качества</h3>
+                    <p>Только оригинальная продукция</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">💳</div>
+                    <h3>Удобная оплата</h3>
+                    <p>Наличными или картой</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>BeautyShop</h3>
+                    <p>Интернет-магазин косметики</p>
+                    <p>© 2024 Все права защищены</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Контакты</h4>
+                    <ul>
+                        <li>📞 +996 555 123 456</li>
+                        <li>📧 info@beautyshop.kg</li>
+                        <li>📍 Бишкек, Кыргызстан</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/static/js/script.js"></script>
+    <script>
+        checkAuth();
+        loadBestsellers();
+        updateCartCount();
+    </script>
+</body>
+</html>
